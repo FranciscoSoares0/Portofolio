@@ -1,0 +1,33 @@
+.typing-demo {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    width: 0;
+  
+    animation:
+      typing 3s steps(20, end) forwards,
+      blink-caret 0.75s step-end 5 both; 
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 16ch; 
+    }
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #fff;
+    }
+  }
+
+  
+  
