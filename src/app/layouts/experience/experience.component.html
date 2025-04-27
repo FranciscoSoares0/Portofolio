@@ -14,8 +14,15 @@
   </div>
   <div>
     <ol class="group/list">
-      @for(experience of experiences();track experience._id){
-        <app-experience-card [experience]="experience"></app-experience-card>
+      @if(loadingSig()){
+        @for(skeleton of [1,2,3];track skeleton){
+          <app-experience-skeleton></app-experience-skeleton>
+        }
+      }
+      @else{
+        @for(experience of experiences();track experience._id){
+          <app-experience-card [experience]="experience"></app-experience-card>
+        }
       }
     </ol>
   </div>

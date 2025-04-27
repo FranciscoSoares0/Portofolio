@@ -11,10 +11,12 @@ export class ProjectsService {
   private readonly http = inject(HttpClient);
 
   projectsSig = signal<Array<Project>>([]);
+  loadingSig = signal<boolean>(true);
 
   getProjects() : void {
     this.http.get<Array<Project>>('/projects').subscribe((projects) => {
       this.projectsSig.set(projects);
+      this.loadingSig.set(false);
     });
   }
 

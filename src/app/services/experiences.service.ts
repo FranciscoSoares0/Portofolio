@@ -10,12 +10,14 @@ export class ExperiencesService {
   private readonly http = inject(HttpClient);
 
   experiencesSig = signal<Array<Experience>>([]);
+  loadingSig = signal<boolean>(true);
 
   getExperiences(): void {
     this.http.get<Array<Experience>>('/experiences').subscribe((experiences) => {
       this.experiencesSig.set(experiences.sort((a, b) =>
         new Date(b.dates.split(" ")[0]).getTime() - new Date(a.dates.split(" ")[0]).getTime()
       ));
+      this.loadingSig.set(false);
     });
   }
 }
