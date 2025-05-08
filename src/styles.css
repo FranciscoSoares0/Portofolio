@@ -4,9 +4,3 @@
 body{
     @apply bg-slate-900; 
 }
-
-html {
-    scroll-behavior: smooth;
-    visibility: visible !important;
-    opacity: 1 !important;
-}

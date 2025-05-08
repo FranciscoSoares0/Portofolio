@@ -5,7 +5,8 @@ import { Component, AfterViewInit, OnDestroy, signal } from '@angular/core';
   selector: 'app-header',
   imports:[CommonModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  
 })
 export class HeaderComponent implements AfterViewInit, OnDestroy {
   currentSection = signal<string>('about');
